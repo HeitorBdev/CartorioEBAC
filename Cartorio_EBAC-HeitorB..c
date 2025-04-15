@@ -23,14 +23,15 @@ int registro() //int é a variável utilizada para definir números inteiros
 
 	printf("        Registro de Usuários      \n\n\n");
 	
-	printf("Digite o CPF: "); // printf é a função responsável pela exibição na tela
+	printf("Para otimizar o uso do sistema, ao realizar o cadastro, solicitamos que não insira espaços\n e preencha o CPF seguindo o formato do exemplo abaixo, com pontos e traço:\n xxx.xxx.xxx-xx.\n\n");
+	printf("\n\nDigite o CPF: "); // printf é a função responsável pela exibição na tela
 	scanf("%s", cpf); //função que lê o valor/dado digitado pelo usuário
 	
 	strcpy(arquivo, cpf); //função Responsável por copiar o valor das strings
 	
 	FILE *file; //função que cria o arquivo no banco de dados
 	file = fopen(arquivo, "w"); //cria um novo arquivo (w = write)
-	fprintf(file,"\nEssas são as Informações do Usuário:\n\n");
+	fprintf(file,"\n   Essas são as Informações do Usuário:\n\n");
 	fprintf(file,"\tCPF: ");
 	fprintf(file,cpf); //fprintf salva o valor da variável (no caso, o cpf no arquivo)
 	fclose(file); //fecha o arquivo
@@ -81,12 +82,16 @@ int registro() //int é a variável utilizada para definir números inteiros
 	
 	system("cls"); // reponsável por limpar a tela
 	
-	printf("        Registro de Usuários      \n\n\n");	
-	printf("Deseja Realizar um Novo Registro? \n");
-	printf("\n\n    1 = SIM      2 = NÃO\n\n");
+	printf("\n");
+	printf("    +---------------------- Registro de Usuário ----------------------+ \n"); 
+	printf("    ¦                                                                 ¦\n"); 
+	printf("    ¦                Deseja Realizar um Novo Registro?                ¦\n"); 
+	printf("    ¦                                                                 ¦\n"); 
+	printf("    ¦                     1 = SIM         2 = NÃO                     ¦\n"); 
+	printf("    ¦                                                                 ¦\n"); 
+	printf("    +-----------------------------------------------------------------+\n\n\n");
 	printf("Opção: ");
-	
-	
+		
 	getchar(); //função que lê a entrada do usuário através de caracteres
 	
 	char opcao; //criando a variável de nome "opção"
@@ -106,11 +111,17 @@ int registro() //int é a variável utilizada para definir números inteiros
 	
 	else //se não for nenhum dos dois, faça isso
 	{
-		printf("        Registro de Usuários      \n\n\n");
-		printf("           Opção Inválida.\n");
-		printf("          Tente Novamente!");
-		printf("\n\n\n\nEsse Software foi desenvolvido por Heitor B.®\n\n\n");
-		
+		printf("\n"); 
+		printf("    +------------------- Registro de Usuário -------------------+ \n"); 
+		printf("    ¦                                                           ¦\n"); 
+		printf("    ¦                      Opção Inválida.                      ¦\n"); 
+		printf("    ¦                     Tente Novamente!!                     ¦\n"); 
+		printf("    ¦                                                           ¦\n");
+		printf("    ¦                                                           ¦\n"); 
+		printf("    ¦                                                           ¦\n"); 
+		printf("    ¦                                                           ¦\n"); 
+		printf("    ¦ Esse Software foi desenvolvido por Heitor B.®             ¦\n"); 
+		printf("    +-----------------------------------------------------------+\n\n\n");
 		system("pause");
 	}
 
@@ -129,8 +140,6 @@ int consulta()// criando função de nome "consulta" para consultar registros
 	scanf("%s", cpf);
 	
 	system("cls");
-
-	printf("        Consulta de Registro      \n\n");
 	
 	FILE *file;
 	file = fopen(cpf,"r"); //função para abrir e ler o arquivo já salvo (r = read)
@@ -138,8 +147,21 @@ int consulta()// criando função de nome "consulta" para consultar registros
 	
 	if(file == NULL) // "if" -> funcção "se" = "if" se sim / "while" se não.. "file == NULL" -> se o arquivo não for localizado
 	{
-		printf("\n\tCPF Não Localizado!  \n");
-		printf("          Tente Novamente!");
+		printf("\n"); 
+		printf("    +------------------ Consulta de Registros  ------------------+ \n"); 
+		printf("    ¦                                                            ¦\n"); 
+		printf("    ¦                                                            ¦\n"); 
+		printf("    ¦                    CPF: ");
+		printf("%s                     ¦\n", cpf);
+		printf("    ¦                                                            ¦\n");
+		printf("    ¦                     Não Localizado.                        ¦\n");
+		printf("    ¦                    Tente Novamente!!                       ¦\n"); 
+		printf("    ¦                                                            ¦\n"); 
+		printf("    ¦                                                            ¦\n");
+		printf("    ¦                                                            ¦\n");
+		printf("    ¦                                                            ¦\n"); 
+		printf("    ¦ Esse Software foi desenvolvido por Heitor B.®              ¦\n"); 
+		printf("    +------------------------------------------------------------+\n\n\n"); 
 	}
 	
 	
@@ -152,9 +174,14 @@ int consulta()// criando função de nome "consulta" para consultar registros
 	system("pause");
 	system("cls");
 	
-	printf("        Consulta de Registros      \n\n\n");	
-	printf("Deseja Consultar um Novo Registro? \n");
-	printf("\n\n    1 = SIM      2 = NÃO\n\n");
+	printf("\n");
+	printf("    +--------------------- Consulta de Registros  ---------------------+ \n"); 
+	printf("    ¦                                                                  ¦\n"); 
+	printf("    ¦                Deseja Consultar um Novo Registro?                ¦\n"); 
+	printf("    ¦                                                                  ¦\n"); 
+	printf("    ¦                      1 = SIM         2 = NÃO                     ¦\n"); 
+	printf("    ¦                                                                  ¦\n"); 
+	printf("    +------------------------------------------------------------------+\n\n\n");
 	printf("Opção: ");
 	
 	
@@ -177,10 +204,17 @@ int consulta()// criando função de nome "consulta" para consultar registros
 	
 	else //se não for nenhum dos dois, faça isso
 	{
-		printf("        Consulta de Registros      \n\n\n");
-		printf("           Opção Inválida.\n");
-		printf("          Tente Novamente!");
-		printf("\n\n\n\nEsse Software foi desenvolvido por Heitor B.®\n\n\n");
+		printf("\n"); 
+		printf("    +------------------ Consulta de Registros  ------------------+ \n"); 
+		printf("    ¦                                                            ¦\n"); 
+		printf("    ¦                      Opção Inválida.                       ¦\n"); 
+		printf("    ¦                     Tente Novamente!!                      ¦\n"); 
+		printf("    ¦                                                            ¦\n"); 
+		printf("    ¦                                                            ¦\n"); 
+		printf("    ¦                                                            ¦\n");
+		printf("    ¦                                                            ¦\n"); 
+		printf("    ¦ Esse Software foi desenvolvido por Heitor B.®              ¦\n"); 
+		printf("    +------------------------------------------------------------+\n\n\n"); 
 		
 		system("pause");
 	}
@@ -207,20 +241,38 @@ int exclusao()// variável "int" de nome "exclusão" = Função responsável pel
 	
 	if (file == NULL) //se não for encontrado
 	{
-		printf("        Exclusão de Registro      \n\n\n");
-		printf("\tCPF: ");
-		printf("%s",cpf);
-		printf("\n\nNão Encontrado. Tente Novamente!!");
-		printf("\n\n\n\nEsse Software foi desenvolvido por Heitor B.®\n\n\n");
+		printf("\n"); 
+		printf("    +------------------- Exclusão de Registro -------------------+ \n"); 
+		printf("    ¦                                                            ¦\n"); 
+		printf("    ¦                                                            ¦\n"); 
+		printf("    ¦                    CPF: ");
+		printf("%s                     ¦\n", cpf);
+		printf("    ¦                                                            ¦\n");
+		printf("    ¦                      Não Localizado.                       ¦\n");
+		printf("    ¦                     Tente Novamente!!                      ¦\n"); 
+		printf("    ¦                                                            ¦\n");
+		printf("    ¦                                                            ¦\n");
+		printf("    ¦                                                            ¦\n"); 
+		printf("    ¦                                                            ¦\n"); 
+		printf("    ¦Esse Software foi desenvolvido por Heitor B.®               ¦\n"); 
+		printf("    +------------------------------------------------------------+\n\n\n");
 		system("pause");
 		return 0; //comando para fazer o usuário retornar ao menu principal
 	}
 	
-	printf("        Exclusão de Registro      \n\n\n");	
-	printf("Deseja Excluir este Registro? \n");
-	printf("\tCPF: ");
-	printf("%s", cpf);
-	printf("\n\n    1 = SIM      2 = NÃO\n\n"); //validação para exclusão de dados
+	printf("\n"); 
+	printf("    +------------------- Exclusão de Registro -------------------+ \n"); 
+	printf("    ¦                                                            ¦\n"); 
+	printf("    ¦                                                            ¦\n"); 
+	printf("    ¦                Deseja Excluir Este Registro?               ¦\n"); 
+	printf("    ¦                    CPF: ");
+	printf("%s                     ¦\n", cpf);
+	printf("    ¦                                                            ¦\n");
+	printf("    ¦                                                            ¦\n"); 
+	printf("    ¦                   1 = SIM       2 = NÃO                    ¦\n"); //valudação da escolha do usuário para exclusão dos dados
+	printf("    ¦                                                            ¦\n"); 
+	printf("    ¦                                                            ¦\n"); 
+	printf("    +------------------------------------------------------------+\n\n\n"); 
 	printf("Opção: ");
 	
 	
@@ -235,36 +287,81 @@ int exclusao()// variável "int" de nome "exclusão" = Função responsável pel
 	{
 	if (remove(cpf) == 0){ //excluir dados do registro solicitado, no caso "cpf"
 	
-		printf("        Exclusão de Registro      \n\n\n");	
-		printf("\tCPF: ");
-		printf("%s", cpf);
-		printf("\n  Deletado com Sucesso!"); //confirmação de exclusão de registro
-		printf("\n\n\n\nEsse Software foi desenvolvido por Heitor B.®\n\n\n");
+		printf("\n"); 
+		printf("    +------------------- Exclusão de Registro -------------------+ \n"); 
+		printf("    ¦                                                            ¦\n"); 
+		printf("    ¦                                                            ¦\n"); 
+		printf("    ¦                    CPF: ");
+		printf("%s                     ¦\n", cpf);
+		printf("    ¦                                                            ¦\n");
+		printf("    ¦                   Deletado com Sucesso!!                   ¦\n"); 
+		printf("    ¦                                                            ¦\n");
+		printf("    ¦                                                            ¦\n");
+		printf("    ¦                                                            ¦\n"); 
+		printf("    ¦                                                            ¦\n"); 
+		printf("    ¦Esse Software foi desenvolvido por Heitor B.®               ¦\n"); 
+		printf("    +------------------------------------------------------------+\n\n\n");
+	
 		system("pause");
 	}
 	}
 	
 	else if (opcao == '2') //se a opção for igual à 2
 	{
-		printf("        Exclusão de Registro      \n\n\n");
-		printf("         Operação Cancelada!");
-		printf("\nPressione Qualquer Tecla para Continuar.");
-		printf("\n\n\n\nEsse Software foi desenvolvido por Heitor B.®\n\n\n");
+		printf("\n"); 
+		printf("    +------------------ Exclusão de Registro  ------------------+ \n"); 
+		printf("    ¦                                                           ¦\n"); 
+		printf("    ¦                    Operação Cancelada!                    ¦\n"); 
+		printf("    ¦         Pressione Qualquer Tecla para Continuar           ¦\n"); 
+		printf("    ¦                                                           ¦\n"); 
+		printf("    ¦                                                           ¦\n"); 
+		printf("    ¦                                                           ¦\n");
+		printf("    ¦                                                           ¦\n"); 
+		printf("    ¦ Esse Software foi desenvolvido por Heitor B.®             ¦\n"); 
+		printf("    +-----------------------------------------------------------+\n\n\n"); 
 		
 		system("pause");
-		
 	}
 	
 	else //se for diferente das opções acima
 	{
-		printf("        Exclusão de Registro      \n\n\n");
-		printf("           Opção Inválida.\n");
-		printf("          Tente Novamente!");
-		printf("\n\n\n\nEsse Software foi desenvolvido por Heitor B.®\n\n\n");
-		
+		printf("\n"); 
+		printf("    +------------------ Exclusão de Registro  ------------------+ \n"); 
+		printf("    ¦                                                           ¦\n"); 
+		printf("    ¦                     Opção Inválida.                       ¦\n"); 
+		printf("    ¦                    Tente Novamente!!                      ¦\n"); 
+		printf("    ¦                                                           ¦\n");
+		printf("    ¦                                                           ¦\n"); 
+		printf("    ¦                                                           ¦\n"); 
+		printf("    ¦                                                           ¦\n"); 
+		printf("    ¦ Esse Software foi desenvolvido por Heitor B.®             ¦\n"); 
+		printf("    +-----------------------------------------------------------+\n\n\n"); 
+
 		system("pause");
 	}
 	
+}
+
+int sobre()
+{
+	printf("\n");
+    printf("    *================================ SOBRE ================================*\n");
+    printf("    |                                                                       |\n");
+    printf("    |                                                                       |\n");
+    printf("    |                                                                       |\n");
+    printf("    |                                                                       |\n");
+    printf("    |                                                                       |\n");
+    printf("    |                                                                       |\n");
+    printf("    |                          IDENTIFICACAO                                |\n");
+    printf("    |                                                                       |\n");
+    printf("    |                                                                       |\n");
+    printf("    |                                                                       |\n");
+    printf("    |CURSO:                                                                 |\n");
+    printf("    |PROFESSOR:                                                             |\n");
+    printf("    |                                                                       |\n");
+    printf("    |                                                                       |\n");
+    printf("    =========================================================================\n");
+    system("pause");
 }
 
 int main() //Função do menú, começo do programa
@@ -295,16 +392,24 @@ int main() //Função do menú, começo do programa
 	
 			setlocale(LC_ALL, "Portuguese"); //definindo biblioteca de linguagem 
 
-			printf("            Cartório da EBAC \n"); //início do menu
-			printf("           Seja Bem-Vinda (o)!\n\n\n");
-			printf("Escolha a opção desejada no menu abaixo:\n\n");
-			printf("\t1 - Registro de Usuários \n");
-			printf("\t2 - Consultar Registros\n");
-			printf("\t3 - Excluir Registro\n");
-			printf("\t4 - Encerrar Programa\n\n\n");
+			printf("\n"); 
+			printf("    +-------------------------- Cartório da EBAC  --------------------------+ \n"); //início do menu
+			printf("    ¦                          Seja Bem-Vinda (o)!                          ¦\n"); 
+			printf("    ¦                                                                       ¦\n"); 
+			printf("    ¦                                                                       ¦\n"); 
+			printf("    ¦                  Escolha a opção desejada no menu abaixo:             ¦\n"); 
+			printf("    ¦                                                                       ¦\n"); 
+			printf("    ¦                                                                       ¦\n"); 
+			printf("    ¦\t1 - Registro de Usuários                                            ¦\n"); 
+			printf("    ¦\t2 - Consultar Registros                                             ¦\n"); 
+			printf("    ¦\t3 - Excluir Registro                                                ¦\n"); 
+			printf("    ¦\t4 - Sobre                                                           ¦\n"); 
+			printf("    ¦\t5 - Encerrar Programa                                               ¦\n"); 
+			printf("    ¦                                                                       ¦\n"); 
+			printf("    ¦                                                                       ¦\n");
+			printf("    +-----------------------------------------------------------------------+\n\n"); 
 			printf("Opção: "); //fim do menu
 		
-				
 			scanf("%d", &opcao); //armazenamento da escolha do usuário
 		
 			system("cls");
@@ -324,17 +429,39 @@ int main() //Função do menú, começo do programa
 				break;
 					
 				case 4:
-				printf("\tObrigado por utilizar esse sistema!!");
-				printf("\n\n\n\nEsse Software foi desenvolvido por Heitor B.®\n\n\n");
+				sobre();
+				break;
+				
+				case 5:
+				printf("\n"); 
+				printf("    +--------------------- Cartório da EBAC  ---------------------+ \n"); 
+				printf("    ¦                                                             ¦\n"); 
+				printf("    ¦                                                             ¦\n"); 
+				printf("    ¦            Obrigado por utilizar esse sistema!!             ¦\n"); 
+				printf("    ¦                                                             ¦\n");
+				printf("    ¦                                                             ¦\n"); 
+				printf("    ¦                                                             ¦\n"); 
+				printf("    ¦                                                             ¦\n");
+				printf("    ¦ Esse Software foi desenvolvido por Heitor B.®               ¦\n"); 
+				printf("    +-------------------------------------------------------------+\n\n\n"); 
+ 	
 				return 0; //chamada para quebrar o loopoing e encerrar	
 						
 				default: //se o usuário digitar uma opção inválida
-				printf("            Cartório da EBAC \n\n\n");
-				printf("\t   Opção Inválida,");
-				printf("\nEscolha apenas entre as opções Disponíveis!");
-				printf("\n\n         Tente Novamente!!");
-				printf("\n\n\nEsse Software foi desenvolvido por Heitor B.®\n\n\n");
-				system("pause");
+				printf("\n"); 
+				printf("    +------------------------- Cartório da EBAC  -------------------------+ \n"); 
+				printf("    ¦                                                                     ¦\n"); 
+				printf("    ¦                         Opção Inválida,                             ¦\n"); 
+				printf("    ¦             Escolha apenas entre as opções disponíveis!             ¦\n"); 
+				printf("    ¦                                                                     ¦\n"); 
+				printf("    ¦                         Tente Novamente!!                           ¦\n"); 
+				printf("    ¦                                                                     ¦\n"); 
+				printf("    ¦                                                                     ¦\n"); 
+				printf("    ¦                                                                     ¦\n");
+				printf("    ¦                                                                     ¦\n");  
+				printf("    ¦ Esse Software foi desenvolvido por Heitor B.®                       ¦\n"); 
+				printf("    +---------------------------------------------------------------------+\n\n\n"); 
+ 				system("pause");
 				break;
 			}//fim da seleção	
 		}
@@ -343,9 +470,18 @@ int main() //Função do menú, começo do programa
 	else
 	{
 		system("cls");
-		printf("\t Senha Inválida\n\tTente Novamente!");
-		printf("\n\n\n\nEsse Software foi desenvolvido por Heitor B.®\n\n\n");
-		system("pause");
+		printf("\n"); 
+		printf("    +--------------------- Cartório da EBAC  ---------------------+ \n"); 
+		printf("    ¦                                                             ¦\n"); 
+		printf("    ¦                       Senha Inválida                        ¦\n"); 
+		printf("    ¦                      Tente Novamente!!                      ¦\n"); 
+		printf("    ¦                                                             ¦\n"); 
+		printf("    ¦                                                             ¦\n"); 
+		printf("    ¦                                                             ¦\n"); 
+		printf("    ¦                                                             ¦\n"); 
+		printf("    ¦ Esse Software foi desenvolvido por Heitor B.®               ¦\n"); 
+		printf("    +-------------------------------------------------------------+\n\n\n"); 
+ 		system("pause");
 		system("cls");
 		main();
 	}
