@@ -1,42 +1,42 @@
-#include <stdio.h> //biblioteca de comunicaÁ„o com o usu·rio
-#include <stdlib.h> //biblioteca de alocaÁ„o de espaÁo em memÛria
-#include <locale.h> //biblioteca de alocaÁıes de texto por regi„o
-#include <string.h> //biblioteca respons·vel por cuidar das strings(sequÍncia de caracteres alfanumÈricos)
+#include <stdio.h> //biblioteca de comunica√ß√£o com o usu√°rio
+#include <stdlib.h> //biblioteca de aloca√ß√£o de espa√ßo em mem√≥ria
+#include <locale.h> //biblioteca de aloca√ß√µes de texto por regi√£o
+#include <string.h> //biblioteca respons√°vel por cuidar das strings(sequ√™ncia de caracteres alfanum√©ricos)
 
-int registro() //int È a vari·vel utilizada para definir n˙meros inteiros
+int registro() //int √© a vari√°vel utilizada para definir n√∫meros inteiros
 {
-	//FunÁ„o Registro, respons·vel por novos cadastros
+	//Fun√ß√£o Registro, respons√°vel por novos cadastros
 	
 	setlocale(LC_ALL, "Portuguese");
 	
-	//comeÁo da criaÁ„o das vari·veis/strings
-	char arquivo[40]; //char È a vari·vel utilizada para armazenar caracteres
-	char cpf[40];    //criaÁ„o da vari·vel char de nome "cpf" com carga de 40 caracteres
-	char nome[40];	 //criaÁ„o da vari·vel char de nome "nome" com carga de 40 caracteres
-	char sobrenome[40]; //criaÁ„o da vari·vel char de nome "sobrenome" com carga de 40 caracteres
-	char cargo[40]; //criaÁ„o da vari·vel char de nome "cargo" com carga de 40 caracteres
-	char telefone[40]; //criaÁ„o da vari·vel char de nome "telefone" com carga de 40 caracteres
-	//final da criaÁ„o de vari·veis/strings
+	//come√ßo da cria√ß√£o das vari√°veis/strings
+	char arquivo[40]; //char √© a vari√°vel utilizada para armazenar caracteres
+	char cpf[40];    //cria√ß√£o da vari√°vel char de nome "cpf" com carga de 40 caracteres
+	char nome[40];	 //cria√ß√£o da vari√°vel char de nome "nome" com carga de 40 caracteres
+	char sobrenome[40]; //cria√ß√£o da vari√°vel char de nome "sobrenome" com carga de 40 caracteres
+	char cargo[40]; //cria√ß√£o da vari√°vel char de nome "cargo" com carga de 40 caracteres
+	char telefone[40]; //cria√ß√£o da vari√°vel char de nome "telefone" com carga de 40 caracteres
+	//final da cria√ß√£o de vari√°veis/strings
 	
 
 	
 
-	printf("        Registro de Usu·rios      \n\n\n");
+	printf("        Registro de Usu√°rios      \n\n\n");
 	
-	printf("Digite o CPF: "); // printf È a funÁ„o respons·vel pela exibiÁ„o na tela
-	scanf("%s", cpf); //funÁ„o que lÍ o valor/dado digitado pelo usu·rio
+	printf("Digite o CPF: "); // printf √© a fun√ß√£o respons√°vel pela exibi√ß√£o na tela
+	scanf("%s", cpf); //fun√ß√£o que l√™ o valor/dado digitado pelo usu√°rio
 	
-	strcpy(arquivo, cpf); //funÁ„o Respons·vel por copiar o valor das strings
+	strcpy(arquivo, cpf); //fun√ß√£o Respons√°vel por copiar o valor das strings
 	
-	FILE *file; //funÁ„o que cria o arquivo no banco de dados
+	FILE *file; //fun√ß√£o que cria o arquivo no banco de dados
 	file = fopen(arquivo, "w"); //cria um novo arquivo (w = write)
-	fprintf(file,"\nEssas s„o as InformaÁıes do Usu·rio:\n\n");
+	fprintf(file,"\nEssas s√£o as Informa√ß√µes do Usu√°rio:\n\n");
 	fprintf(file,"\tCPF: ");
-	fprintf(file,cpf); //fprintf salva o valor da vari·vel (no caso, o cpf no arquivo)
+	fprintf(file,cpf); //fprintf salva o valor da vari√°vel (no caso, o cpf no arquivo)
 	fclose(file); //fecha o arquivo
 	
-	file = fopen(arquivo, "a"); //funÁ„o para abrir o arquivo j· salvo (a = atualizar)
-	fprintf(file, "\n\tNome: "); //funÁ„o que escreve adiciona algo dentro do arquivo 
+	file = fopen(arquivo, "a"); //fun√ß√£o para abrir o arquivo j√° salvo (a = atualizar)
+	fprintf(file, "\n\tNome: "); //fun√ß√£o que escreve adiciona algo dentro do arquivo 
 	fclose(file);
 		
 	printf("Digite o Nome: ");
@@ -79,44 +79,44 @@ int registro() //int È a vari·vel utilizada para definir n˙meros inteiros
 	fprintf(file, telefone);
 	fclose(file);
 	
-	system("cls"); // repons·vel por limpar a tela
+	system("cls"); // repons√°vel por limpar a tela
 	
-	printf("        Registro de Usu·rios      \n\n\n");	
+	printf("        Registro de Usu√°rios      \n\n\n");	
 	printf("Deseja Realizar um Novo Registro? \n");
-	printf("\n\n    1 = SIM      2 = N√O\n\n");
-	printf("OpÁ„o: ");
+	printf("\n\n    1 = SIM      2 = N√ÉO\n\n");
+	printf("Op√ß√£o: ");
 	
 	
-	getchar(); //funÁ„o que lÍ a entrada do usu·rio atravÈs de caracteres
+	getchar(); //fun√ß√£o que l√™ a entrada do usu√°rio atrav√©s de caracteres
 	
-	char opcao; //criando a vari·vel de nome "opÁ„o"
-	opcao = getchar(); //definindo que "opÁ„o" È a escolha o usu·rio
+	char opcao; //criando a vari√°vel de nome "op√ß√£o"
+	opcao = getchar(); //definindo que "op√ß√£o" √© a escolha o usu√°rio
 	
 	system("cls");
 	
-	if (opcao == '1') //se a condiÁ„o for verdadeira, faÁa isso
+	if (opcao == '1') //se a condi√ß√£o for verdadeira, fa√ßa isso
 	{	
 		registro(); //voltar ao menu "Registros"
 	}
 	
-	else if (opcao == '2') // sen„o, faÁa isso
+	else if (opcao == '2') // sen√£o, fa√ßa isso
 	{
 		//apenas voltar ao menu principal
 	}
 	
-	else //se n„o for nenhum dos dois, faÁa isso
+	else //se n√£o for nenhum dos dois, fa√ßa isso
 	{
-		printf("        Registro de Usu·rios      \n\n\n");
-		printf("           OpÁ„o Inv·lida.\n");
+		printf("        Registro de Usu√°rios      \n\n\n");
+		printf("           Op√ß√£o Inv√°lida.\n");
 		printf("          Tente Novamente!");
-		printf("\n\n\n\nEsse Software foi desenvolvido por Heitor B.Æ\n\n\n");
+		printf("\n\n\n\nEsse Software foi desenvolvido por Heitor B.¬Æ\n\n\n");
 		
 		system("pause");
 	}
 
 }
 
-int consulta()// criando funÁ„o de nome "consulta" para consultar registros
+int consulta()// criando fun√ß√£o de nome "consulta" para consultar registros
 {
 	setlocale(LC_ALL, "Portuguese");
 	
@@ -125,7 +125,7 @@ int consulta()// criando funÁ„o de nome "consulta" para consultar registros
 	char cpf[40];
 	char conteudo[200];
 	
-	printf("Digite o CPF a ser Consultado: ");
+	printf("Digite o CPF a ser Consultado: "); //recebendo dado a ser consultado
 	scanf("%s", cpf);
 	
 	system("cls");
@@ -133,54 +133,54 @@ int consulta()// criando funÁ„o de nome "consulta" para consultar registros
 	printf("        Consulta de Registro      \n\n");
 	
 	FILE *file;
-	file = fopen(cpf,"r"); //funÁ„o para abrir e ler o arquivo j· salvo (r = read)
+	file = fopen(cpf,"r"); //fun√ß√£o para abrir e ler o arquivo j√° salvo (r = read)
 	
 	
-	if(file == NULL) // "if" -> funcÁ„o "se" = "if" se sim / "while" se n„o.. "file == NULL" -> se o arquivo n„o for localizado
+	if(file == NULL) // "if" -> func√ß√£o "se" = "if" se sim / "while" se n√£o.. "file == NULL" -> se o arquivo n√£o for localizado
 	{
-		printf("\n\tCPF N„o Localizado!  \n");
+		printf("\n\tCPF N√£o Localizado!  \n");
 		printf("          Tente Novamente!");
 	}
 	
 	
-	while(fgets(conteudo, 200, file) != NULL) // "fgets" = buscar no banco de dados todos os dados do arquivo "!= NULL" atÈ o final do arquivo
+	while(fgets(conteudo, 200, file) != NULL) // "fgets" = buscar no banco de dados todos os dados do arquivo "!= NULL" at√© o final do arquivo
 	{
-		printf("%s", conteudo); //imprimir na tela informaÁıes do arquivo em quest„o
+		printf("%s", conteudo); //imprimir na tela informa√ß√µes do arquivo em quest√£o
 	}
 
-	printf("\n\n\n\nEsse Software foi desenvolvido por Heitor B.Æ\n\n\n");
+	printf("\n\n\n\nEsse Software foi desenvolvido por Heitor B.¬Æ\n\n\n");
 	system("pause");
 	system("cls");
 	
 	printf("        Consulta de Registros      \n\n\n");	
 	printf("Deseja Consultar um Novo Registro? \n");
-	printf("\n\n    1 = SIM      2 = N√O\n\n");
-	printf("OpÁ„o: ");
+	printf("\n\n    1 = SIM      2 = N√ÉO\n\n");
+	printf("Op√ß√£o: ");
 	
 	
-	getchar(); //funÁ„o que lÍ a entrada do usu·rio atravÈs de caracteres
+	getchar(); //fun√ß√£o que l√™ a entrada do usu√°rio atrav√©s de caracteres
 	
-	char opcao; //criando a vari·vel de nome "opÁ„o"
-	opcao = getchar(); //definindo que "opÁ„o" È a escolha o usu·rio
+	char opcao; //criando a vari√°vel de nome "op√ß√£o"
+	opcao = getchar(); //definindo que "op√ß√£o" √© a escolha o usu√°rio
 	
 	system("cls");
 	
-	if (opcao == '1') //se a condiÁ„o for verdadeira, faÁa isso
+	if (opcao == '1') //se a condi√ß√£o for verdadeira, fa√ßa isso
 	{	
 		consulta(); //voltar ao menu "Consulta"
 	}
 	
-	else if (opcao == '2') // sen„o, faÁa isso
+	else if (opcao == '2') // sen√£o, fa√ßa isso
 	{
 		//apenas voltar ao menu principal
 	}
 	
-	else //se n„o for nenhum dos dois, faÁa isso
+	else //se n√£o for nenhum dos dois, fa√ßa isso
 	{
 		printf("        Consulta de Registros      \n\n\n");
-		printf("           OpÁ„o Inv·lida.\n");
+		printf("           Op√ß√£o Inv√°lida.\n");
 		printf("          Tente Novamente!");
-		printf("\n\n\n\nEsse Software foi desenvolvido por Heitor B.Æ\n\n\n");
+		printf("\n\n\n\nEsse Software foi desenvolvido por Heitor B.¬Æ\n\n\n");
 		
 		system("pause");
 	}
@@ -189,95 +189,95 @@ int consulta()// criando funÁ„o de nome "consulta" para consultar registros
 
 }
 
-int exclusao()// vari·vel "int" de nome "exclus„o" = FunÁ„o respons·vel pela exclus„o de registros
+int exclusao()// vari√°vel "int" de nome "exclus√£o" = Fun√ß√£o respons√°vel pela exclus√£o de registros
 {
 	setlocale(LC_ALL, "Portuguese"); //definindo biblioteca de linguagem 
 	
 	char cpf[40];
 	
-	printf("        Exclus„o de Registro      \n\n\n");
-	printf("Digite o CPF a ser ExlcuÌdo: ");
+	printf("        Exclus√£o de Registro      \n\n\n");
+	printf("Digite o CPF a ser Exlcu√≠do: "); //recebendo dados a serem exclu√≠dos
 	scanf("%s", cpf);
 		
 	FILE *file; //abrindo pasta onde se localiza o arquivo 
-	file = fopen(cpf,"r"); //lendo banco de dados para validar dados inseridos pelo usu·rio
+	file = fopen(cpf,"r"); //lendo banco de dados para validar dados inseridos pelo usu√°rio
 	fclose(file);
 	
 	system("cls");
 	
-	if (file == NULL) //se n„o for encontrado
+	if (file == NULL) //se n√£o for encontrado
 	{
-		printf("        Exclus„o de Registro      \n\n\n");
+		printf("        Exclus√£o de Registro      \n\n\n");
 		printf("\tCPF: ");
 		printf("%s",cpf);
-		printf("\n\nN„o Encontrado. Tente Novamente!!");
-		printf("\n\n\n\nEsse Software foi desenvolvido por Heitor B.Æ\n\n\n");
+		printf("\n\nN√£o Encontrado. Tente Novamente!!");
+		printf("\n\n\n\nEsse Software foi desenvolvido por Heitor B.¬Æ\n\n\n");
 		system("pause");
-		return 0; //comando para fazer o usu·rio retornar ao menu principal
+		return 0; //comando para fazer o usu√°rio retornar ao menu principal
 	}
 	
-	printf("        Exclus„o de Registro      \n\n\n");	
+	printf("        Exclus√£o de Registro      \n\n\n");	
 	printf("Deseja Excluir este Registro? \n");
 	printf("\tCPF: ");
 	printf("%s", cpf);
-	printf("\n\n    1 = SIM      2 = N√O\n\n"); //validaÁ„o para exclus„o de dados
-	printf("OpÁ„o: ");
+	printf("\n\n    1 = SIM      2 = N√ÉO\n\n"); //valida√ß√£o para exclus√£o de dados
+	printf("Op√ß√£o: ");
 	
 	
-	getchar(); //funÁ„o que lÍ a entrada do usu·rio atravÈs de caracteres
+	getchar(); //fun√ß√£o que l√™ a entrada do usu√°rio atrav√©s de caracteres
 	
-	char opcao; //criando a vari·vel opÁ„o
-	opcao = getchar(); //definindo que "opÁ„o" = entrada de dados do usu·rio
+	char opcao; //criando a vari√°vel op√ß√£o
+	opcao = getchar(); //definindo que "op√ß√£o" = entrada de dados do usu√°rio
 
 	system("cls");
 	
-	if (opcao == '1') //se a "opÁ„o" for igual ‡ 1, fazer isso
+	if (opcao == '1') //se a "op√ß√£o" for igual √† 1, fazer isso
 	{
 	if (remove(cpf) == 0){ //excluir dados do registro solicitado, no caso "cpf"
 	
-		printf("        Exclus„o de Registro      \n\n\n");	
+		printf("        Exclus√£o de Registro      \n\n\n");	
 		printf("\tCPF: ");
 		printf("%s", cpf);
-		printf("\n  Deletado com Sucesso!"); //confirmaÁ„o de exclus„o de registro
-		printf("\n\n\n\nEsse Software foi desenvolvido por Heitor B.Æ\n\n\n");
+		printf("\n  Deletado com Sucesso!"); //confirma√ß√£o de exclus√£o de registro
+		printf("\n\n\n\nEsse Software foi desenvolvido por Heitor B.¬Æ\n\n\n");
 		system("pause");
 	}
 	}
 	
-	else if (opcao == '2') //se a opÁ„o for igual ‡ 2
+	else if (opcao == '2') //se a op√ß√£o for igual √† 2
 	{
-		printf("        Exclus„o de Registro      \n\n\n");
-		printf("         OperaÁ„o Cancelada!");
+		printf("        Exclus√£o de Registro      \n\n\n");
+		printf("         Opera√ß√£o Cancelada!");
 		printf("\nPressione Qualquer Tecla para Continuar.");
-		printf("\n\n\n\nEsse Software foi desenvolvido por Heitor B.Æ\n\n\n");
+		printf("\n\n\n\nEsse Software foi desenvolvido por Heitor B.¬Æ\n\n\n");
 		
 		system("pause");
 		
 	}
 	
-	else //se for diferente das opÁıes acima
+	else //se for diferente das op√ß√µes acima
 	{
-		printf("        Exclus„o de Registro      \n\n\n");
-		printf("           OpÁ„o Inv·lida.\n");
+		printf("        Exclus√£o de Registro      \n\n\n");
+		printf("           Op√ß√£o Inv√°lida.\n");
 		printf("          Tente Novamente!");
-		printf("\n\n\n\nEsse Software foi desenvolvido por Heitor B.Æ\n\n\n");
+		printf("\n\n\n\nEsse Software foi desenvolvido por Heitor B.¬Æ\n\n\n");
 		
 		system("pause");
 	}
 	
 }
 
-int main() //FunÁ„o do men˙, comeÁo do programa
+int main() //Fun√ß√£o do men√∫, come√ßo do programa
 {
 	setlocale(LC_ALL, "Portuguese"); //definindo biblioteca de linguagem 
 
-	//Definindo vari·veis
-	int opcao=0; //vari·vel "int" de nome "opÁ„o" com valor = 0
-	int repeticao=1; //vari·vel "int" de nome "repeticao" com valor =1
+	//Definindo vari√°veis
+	int opcao=0; //vari√°vel "int" de nome "op√ß√£o" com valor = 0
+	int repeticao=1; //vari√°vel "int" de nome "repeticao" com valor =1
 	char senhadigitada[]="a";
 	int comparacao;
 	
-	printf("            CartÛrio da EBAC \n");
+	printf("            Cart√≥rio da EBAC \n");
 	printf("\n\n Login de Administrador \n\n Digite sua senha: ");
 	scanf("%s", senhadigitada);
 	
@@ -288,63 +288,63 @@ int main() //FunÁ„o do men˙, comeÁo do programa
 	if(comparacao == 0)
 	{
 	
-		for(repeticao=1;repeticao=1;) //criando laÁo de repetiÁ„o - enquanto "repeticao" = 1, manter o processo
+		for(repeticao=1;repeticao=1;) //criando la√ßo de repeti√ß√£o - enquanto "repeticao" = 1, manter o processo
 		{
 		
 			system("cls"); //comando de limpar a tela
 	
 			setlocale(LC_ALL, "Portuguese"); //definindo biblioteca de linguagem 
 
-			printf("            CartÛrio da EBAC \n"); //inÌcio do menu
+			printf("            Cart√≥rio da EBAC \n"); //in√≠cio do menu
 			printf("           Seja Bem-Vinda (o)!\n\n\n");
-			printf("Escolha a opÁ„o desejada no menu abaixo:\n\n");
-			printf("\t1 - Registro de Usu·rios \n");
+			printf("Escolha a op√ß√£o desejada no menu abaixo:\n\n");
+			printf("\t1 - Registro de Usu√°rios \n");
 			printf("\t2 - Consultar Registros\n");
 			printf("\t3 - Excluir Registro\n");
 			printf("\t4 - Encerrar Programa\n\n\n");
-			printf("OpÁ„o: "); //fim do menu
+			printf("Op√ß√£o: "); //fim do menu
 		
 				
-			scanf("%d", &opcao); //armazenamento da escolha do usu·rio
+			scanf("%d", &opcao); //armazenamento da escolha do usu√°rio
 		
 			system("cls");
 		
 			switch(opcao)
 			{
 				case 1:
-				registro(); //chamada para a funÁ„o registro
+				registro(); //chamada para a fun√ß√£o registro
 				break;
 				
 				case 2:
-				consulta(); //chamada para a funÁ„o consulta
+				consulta(); //chamada para a fun√ß√£o consulta
 				break;
 			
 				case 3:
-				exclusao(); //chamada para a funÁ„o exclusao
+				exclusao(); //chamada para a fun√ß√£o exclusao
 				break;
 					
 				case 4:
 				printf("\tObrigado por utilizar esse sistema!!");
-				printf("\n\n\n\nEsse Software foi desenvolvido por Heitor B.Æ\n\n\n");
+				printf("\n\n\n\nEsse Software foi desenvolvido por Heitor B.¬Æ\n\n\n");
 				return 0; //chamada para quebrar o loopoing e encerrar	
 						
-				default: //se o usu·rio digitar uma opÁ„o inv·lida
-				printf("            CartÛrio da EBAC \n\n\n");
-				printf("\tOpÁ„o IndisponÌvel,");
-				printf("\nEscolha apenas entre as opÁıes 1, 2, 3 ou 4!");
+				default: //se o usu√°rio digitar uma op√ß√£o inv√°lida
+				printf("            Cart√≥rio da EBAC \n\n\n");
+				printf("\t   Op√ß√£o Inv√°lida,");
+				printf("\nEscolha apenas entre as op√ß√µes Dispon√≠veis!");
 				printf("\n\n         Tente Novamente!!");
-				printf("\n\n\nEsse Software foi desenvolvido por Heitor B.Æ\n\n\n");
+				printf("\n\n\nEsse Software foi desenvolvido por Heitor B.¬Æ\n\n\n");
 				system("pause");
 				break;
-			}//fim da seleÁ„o	
+			}//fim da sele√ß√£o	
 		}
 	} 
 	
 	else
 	{
 		system("cls");
-		printf("\t Senha Inv·lida\n\tTente Novamente!");
-		printf("\n\n\n\nEsse Software foi desenvolvido por Heitor B.Æ\n\n\n");
+		printf("\t Senha Inv√°lida\n\tTente Novamente!");
+		printf("\n\n\n\nEsse Software foi desenvolvido por Heitor B.¬Æ\n\n\n");
 		system("pause");
 		system("cls");
 		main();
